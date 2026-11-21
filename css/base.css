@@ -1,0 +1,316 @@
+
+/*
+ * CHI RHO LABS
+ * Shared Website Stylesheet
+ * File: css/base.css
+ *
+ * Layout and typography shared between
+ * Enterprise and Development.
+ */
+
+/* ---------- Global ---------- */
+
+:root {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--bg, #171b20);
+    color: var(--text, #f0f0f0);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:focus-visible {
+    outline: 2px solid var(--accent, #7898b5);
+    outline-offset: 4px;
+}
+
+h1, h2, h3, p {
+    margin-top: 0;
+}
+
+h1, h2, h3 {
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+}
+
+h2 {
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+}
+
+p {
+    color: var(--muted, #b0b5ba);
+}
+
+.container {
+    width: min(100% - 3rem, 1160px);
+    margin-inline: auto;
+}
+
+/* ---------- Header ---------- */
+
+.site-header {
+    background: var(--header-bg, #20262d);
+    border-bottom: 1px solid var(--border, #39434d);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    min-height: 88px;
+}
+
+.brand {
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    white-space: nowrap;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-left: auto;
+}
+
+.main-nav a {
+    color: var(--muted, #b0b5ba);
+    font-size: 0.9rem;
+    transition: color 0.2s;
+}
+
+.main-nav a:hover {
+    color: var(--accent, #7898b5);
+}
+
+/* ---------- Site Switch ---------- */
+
+.site-switch {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 90px;
+    padding: 0.55rem 1rem;
+    border-radius: 4px;
+    background: var(--switch-bg, #f0a020);
+    color: var(--switch-text, #101010);
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-align: center;
+    white-space: nowrap;
+}
+
+a.site-switch:hover {
+    filter: brightness(1.15);
+}
+
+.site-switch[aria-disabled="true"] {
+    opacity: 0.65;
+    cursor: default;
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+    padding: 5rem 0;
+    border-bottom: 1px solid var(--border, #39434d);
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 4rem;
+    min-height: 340px;
+}
+
+.hero-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-brand img {
+    display: block;
+    width: 100%;
+    max-width: 420px;
+    height: auto;
+}
+
+.hero-message h1 {
+    margin-bottom: 1.5rem;
+}
+
+.hero-message p {
+    max-width: 520px;
+    font-size: 1.1rem;
+}
+
+/* ---------- Buttons ---------- */
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.85rem 1.5rem;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background: var(--button-bg, #547997);
+    color: var(--button-text, #ffffff);
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.button:hover {
+    background: var(--button-hover, #688da9);
+    transform: translateY(-2px);
+}
+
+/* ---------- Content Sections ---------- */
+
+.section {
+    padding: 4.5rem 0;
+    border-bottom: 1px solid var(--border, #39434d);
+}
+
+.section h2 {
+    margin-bottom: 2rem;
+}
+
+.section:nth-child(even) {
+    background: var(--surface, #20262d);
+}
+
+/* ---------- Cards ---------- */
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+}
+
+.card {
+    padding: 2rem;
+    background: var(--card-bg, #29333d);
+    border: 1px solid var(--border, #39434d);
+    border-radius: 6px;
+}
+
+.card h3 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.card p:last-child {
+    margin-bottom: 0;
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+    padding: 2rem 0;
+    background: var(--footer-bg, #151a20);
+    text-align: center;
+}
+
+.site-footer p {
+    margin: 0;
+    font-size: 0.85rem;
+}
+
+/* ---------- Responsive Layout ---------- */
+
+@media (max-width: 900px) {
+
+    .header-content {
+        flex-wrap: wrap;
+        gap: 1rem;
+        padding-block: 1rem;
+    }
+
+    .main-nav {
+        order: 3;
+        width: 100%;
+        margin-left: 0;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .brand {
+        margin-right: auto;
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .hero {
+        padding: 3rem 0;
+    }
+
+    .card-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+
+    .container {
+        width: min(100% - 2rem, 1160px);
+    }
+
+    .main-nav {
+        gap: 0.75rem 1.25rem;
+    }
+
+    .hero-content {
+        min-height: auto;
+    }
+
+    .section {
+        padding: 3rem 0;
+    }
+
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    .button,
+    .main-nav a {
+        transition: none;
+    }
+
+    .button:hover {
+        transform: none;
+    }
+}

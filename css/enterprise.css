@@ -1,0 +1,96 @@
+
+/*
+ * CHI RHO LABS
+ * Enterprise Theme
+ * File: css/enterprise.css
+ */
+
+:root {
+
+    /* Backgrounds */
+    --bg: #19232e;
+    --header-bg: #202e3d;
+    --surface: #233343;
+    --card-bg: #2b3d50;
+    --footer-bg: #141d27;
+
+    /* Typography */
+    --text: #f0f1ed;
+    --muted: #b4c0cb;
+
+    /* Borders and accents */
+    --border: #405367;
+    --accent: #a9bdd0;
+
+    /* Primary buttons */
+    --button-bg: #496d8b;
+    --button-hover: #5e83a1;
+    --button-text: #ffffff;
+
+    /*
+     * Destination-themed navigation switch
+     * Enterprise -> Development (amber/black)
+     */
+    --switch-bg: #e8a12c;
+    --switch-text: #101010;
+}
+
+/* ---------- Enterprise Brand ---------- */
+
+.brand {
+    color: #dbc69a;
+}
+
+.brand:hover {
+    color: #f0dbb0;
+}
+
+/* ---------- Headings ---------- */
+
+h1 {
+    color: #f4f0e7;
+}
+
+h2 {
+    color: #dbc69a;
+}
+
+h3 {
+    color: #e6ebf0;
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+    background: linear-gradient(
+        135deg,
+        #19232e 0%,
+        #26394b 100%
+    );
+}
+
+.hero-message p {
+    color: #c4cdd5;
+}
+
+/* ---------- Navigation ---------- */
+
+.main-nav a[aria-current="page"] {
+    color: #dbc69a;
+}
+
+/* ---------- Cards ---------- */
+
+.card {
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+}
+
+.card:hover {
+    border-color: #829bb2;
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+    border-top: 1px solid #405367;
+}
